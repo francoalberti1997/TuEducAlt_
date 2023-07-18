@@ -1,0 +1,17 @@
+
+*Modificar clase Estudiantes, Agregar img y personalizar
+
+*Escribir lógica por si ya hay usuarios con ese username o email
+SIGN UP
+
+*Crear Interfaz para staff 
+
+*iconos de FB, etc de footer abajo-problem con icono wsp
+
+*Arreglar para difs navegadores
+
+*seccion por qué elegirnos o about us
+
+*Plantilla Reset Password 
+
+*Restringir vistas segun corresponda

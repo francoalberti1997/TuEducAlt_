@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Educ Alt</title>
+</head>
+<body style="background-color: blanchedalmond;">
+
+    {% if user.is_authenticated %}
+        Welcome {{user.username}}
+        <p><a href="{% url 'logout' %}">logout</a></p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a></p>
+    {% endif %}
+    
+    <ul>
+        {% for estudiante in estudiantes%}
+        <li> {{estudiante.nombre}} </li>
+        <li> {{estudiante.apellido}} </li>
+        <li> {{estudiante.mail}} </li>
+        <li> {{estudiante.edad}} </li>
+        <p> este es el id de User {{estudiante.user}} </p>
+
+        {%endfor%}
+    </ul>
+
+    <span><a href="{% url 'logout' %}"></a></span>
+    <p> Hola {{request.user}} </p>
+     <!-- Crear Interfaz para staff -->
+     <p> {{request.user.is_staff}} </p>
+</body>
+</html>
