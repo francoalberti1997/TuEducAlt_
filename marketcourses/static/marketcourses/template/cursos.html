@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'marketcourses/css/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cursos</title>
+</head>
+<body class="cursos">
+    <div class="offer">
+        <div class="small-container">
+            <h1><a href="{% url 'home' %}">ATRÁS</a></h1>
+            <div class="row" id="offer_cursos">
+                <div class="col-2">
+                    <img src="{{ cursos.image }}" alt="" class="offer-img">
+                    <div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nemo saepe blanditiis sint harum deserunt quia atque cupiditate ea, alias ullam nisi ad incidunt mollitia doloremque, quas iure corrupti repudiandae!</p>
+                    </div>
+                </div>  
+
+                <div class="col-2" id="col-2_cursos">
+                    <h2>{{cursos.name}}</h2>
+                    <h1>{{cursos.description}}</h1>
+                    <h4 id="precio_cursos">$ {{cursos.price}}</h4>
+                    <a href="" class="btn">COMPRAR AHORA &#8594;</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

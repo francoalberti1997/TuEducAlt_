@@ -81,7 +81,7 @@
             {% for i in productos%}
             <div class="col-4">
                 {% if i.image%}
-                    <img src="{{ i.image }}" alt="">
+                <a href="{% url 'cursos' %}{{i.id}}"><img src="{{ i.image }}" alt=""></a>
                 {% endif %}
                 <h4>{{i.name}}</h4>
                 <div class="rating" id="cursos_rating">
@@ -101,7 +101,7 @@
             {% for i in productos_complement%}
             <div class="col-4">
                 {% if i.image%}
-                    <img src="{{ i.image }}" alt="">
+                    <a href="{% url 'cursos' %}{{i.id}}"><img src="{{ i.image }}" alt=""></a>
                 {% endif %}
                 <h4>{{i.name}}</h4>
                 <div class="rating" id="cursos_rating_l">
@@ -132,6 +132,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="testimonial">
         <div class="small container">
             <div class="row">

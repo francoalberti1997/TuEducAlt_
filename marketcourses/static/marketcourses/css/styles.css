@@ -60,6 +60,7 @@ p{
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
+    cursor: pointer;
 }
 .col-2{
     flex-basis: 90%;
@@ -456,4 +457,25 @@ small{
         height: 100%;
     }
  
+}
+
+/* Cursos HTML */
+.cursos{
+    background: radial-gradient(#fff, #555);
+}
+#offer_cursos{
+    background-color: #3B5998;
+    opacity: 1;
+
+}
+#precio_cursos{
+    background-color: #fed811;    
+    color: #fff;
+    opacity: 1;
+}
+#col-2_cursos{
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+
 }

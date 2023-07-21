@@ -24,7 +24,7 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', views.home),
+    path('home/', views.home, name="home"),
     path('accounts/', include('django.contrib.auth.urls'), name='login'),
     # path('campus/', TemplateView.as_view(template_name = 'campus.html')),
     path('campus/', views.campus, name="campus"),
@@ -33,6 +33,8 @@ urlpatterns = [
     path('login/', views.login_campus, name="login"),
     path('logout/', views.logout_campus, name="logout"),
     path('register/', views.register, name="register"),
+    path('cursos/', views.cursos, name="cursos"),
+    path('cursos/<int:id>/', views.cursos, name="cursos"),
     
     path('reset_password/', auth_views.PasswordResetView.as_view(template_name = "registration/password_reset.html"), name="reset_password"),
 

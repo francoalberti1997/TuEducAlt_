@@ -134,6 +134,22 @@ def home(request):
 
     return render(request, 'index.html', contexto)
 
+def cursos(request, id=None):
+    if id:
+        response = requests.get(settings.api_base_url + f'cursos/{str(id)}/')
+        print(f"esta es la response {response} y es {type(response.status_code)}")
+        try:
+            if response.status_code==200:
+                productos = response.json()
+                contexto = {"cursos":productos}
+                return render(request, 'cursos.html', contexto)
+        except:
+            return HttpResponse("Error!")
+        
+    else:
+        return redirect("home")
+
+
 #login - logout - TOkens 
 
 # def login_user(request):

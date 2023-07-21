@@ -33,3 +33,5 @@ function scrollToSection(sectionId) {
       scrollToSection('cursos');
     });
   });
+
+

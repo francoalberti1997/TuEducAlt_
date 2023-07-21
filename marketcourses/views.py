@@ -13,6 +13,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from tueducalt.decorators import unauthenticated_user, allowed_users
+from django.core.exceptions import ObjectDoesNotExist
 
 
 class Archivos_pagina_LIST(APIView):
@@ -30,7 +31,7 @@ class Archivos_pagina_LIST(APIView):
 @api_view(['GET', 'POST'])
 # @allowed_users(allowed_roles = ["admin"])
 
-def get_product(request, *args, **kwargs):
+def get_product(request, id = None):
     if request.method == 'POST':
         serializer = ProductSerializer(data=request.data)
         if serializer.is_valid():
@@ -40,9 +41,18 @@ def get_product(request, *args, **kwargs):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
     elif request.method == 'GET':
-        products = Product.objects.all()
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data)
+        if id:
+            try:
+                curso = Product.objects.get(pk = id)
+                serializer = ProductSerializer(curso)
+                return Response(serializer.data)
+            
+            except ObjectDoesNotExist:
+                return HttpResponse("Curso No existe")
+        else:
+            products = Product.objects.all()
+            serializer = ProductSerializer(products, many=True)
+            return Response(serializer.data)
     else:
         return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
