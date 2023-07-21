@@ -6,7 +6,7 @@ SIGN UP
 
 *Crear Interfaz para staff 
 
-*iconos de FB, etc de footer abajo-problem con icono wsp
+*iconos de FB, etc de footer abajo-problem con icono wsp (Working)
 
 *Arreglar para difs navegadores
 
